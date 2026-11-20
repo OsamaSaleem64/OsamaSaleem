@@ -1,668 +1,696 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osama Saleem | Creative Strategist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Osama Saleem Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600;700&family=Aref+Ruqaa:wght@700&display=swap">
+<style>
+  /* Layout concept: a dark hallway of five arched doors. Brass nameplates tie the hero, the doors and the contact block together. */
+  :root {
+    --bg: #0d1117;
+    --bg-raise: #151b24;
+    --bg-sunk: #0a0d12;
+    --fg: #edf0f5;
+    --muted: #98a2b3;
+    --line: rgba(255, 255, 255, 0.11);
+    --accent-text: #e6c274;
+    --brass-1: #f1d38a;
+    --brass-2: #c9a14a;
+    --brass-3: #8f6d22;
+    --brass-ink: #2b2008;
+    --wall: #141a23;
+    --floor: #0b0f15;
+    --door-frame: #262f3d;
+    --door-blue: #2f62c4;
+    --door-violet: #6d5fb3;
+    --door-rose: #c4506f;
+    --door-amber: #dc8a2e;
+    --door-green: #1f8060;
+    --tag-bg: #f2f4f8;
+    --tag-fg: #10141b;
+    --ok: #4cc38a;
+    --glow: rgba(78, 96, 230, 0.2);
+    --shadow: 0 34px 60px -30px rgba(0, 0, 0, 0.75);
+    --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --f-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+    --f-arabic: "Aref Ruqaa", "Amiri", "Noto Naskh Arabic", serif;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f1f4f9; --bg-raise: #ffffff; --bg-sunk: #e7ecf4; --fg: #10151d; --muted: #566074;
+      --line: rgba(16, 21, 29, 0.13); --accent-text: #7d5400; --wall: #dde3ee; --floor: #b9c3d4;
+      --door-frame: #c3ccdb; --tag-bg: #10151d; --tag-fg: #f2f4f8; --glow: rgba(78, 96, 230, 0.12);
+      --shadow: 0 34px 60px -34px rgba(30, 45, 80, 0.4); color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f1f4f9; --bg-raise: #ffffff; --bg-sunk: #e7ecf4; --fg: #10151d; --muted: #566074;
+    --line: rgba(16, 21, 29, 0.13); --accent-text: #7d5400; --wall: #dde3ee; --floor: #b9c3d4;
+    --door-frame: #c3ccdb; --tag-bg: #10151d; --tag-fg: #f2f4f8; --glow: rgba(78, 96, 230, 0.12);
+    --shadow: 0 34px 60px -34px rgba(30, 45, 80, 0.4); color-scheme: light;
+  }
 
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #050505;
-            color: #ffffff;
-            overflow-x: hidden;
-            background-image:
-                radial-gradient(circle at 15% 50%, rgba(0, 195, 255, 0.15), transparent 40%),
-                radial-gradient(circle at 85% 30%, rgba(138, 43, 226, 0.2), transparent 40%);
-            background-attachment: fixed;
-        }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: var(--f-body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; transition: background-color .4s ease, color .4s ease;
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 25; background: var(--bg); }
+  h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 50;
-            opacity: 0.04;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
+  .wrap {
+    width: 100%; max-width: 1180px; margin-inline: auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  section { padding-block: clamp(56px, 9vw, 112px); scroll-margin-top: 56px; }
 
-        .nav-link {
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-        }
+  /* Type */
+  .kicker { font: 600 12px/1 var(--f-body); letter-spacing: .15em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; }
+  h2 { font-family: var(--f-display); font-weight: 700; font-size: clamp(32px, 5vw, 56px); line-height: 1.04; letter-spacing: -.025em; text-wrap: balance; }
+  .lede { color: var(--muted); font-size: clamp(16px, 1.5vw, 19px); max-width: 52ch; margin-top: 16px; text-wrap: pretty; }
+  .sec-head { margin-bottom: clamp(28px, 4vw, 48px); }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: #00c3ff;
-        }
+  /* Buttons and plates */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px;
+    border-radius: 999px; border: 1px solid transparent; font: 600 15px/1 var(--f-body); text-decoration: none; cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-brass { background: linear-gradient(180deg, var(--brass-1), var(--brass-2)); color: var(--brass-ink); box-shadow: 0 10px 24px -12px rgba(201, 161, 74, .8); }
+  .btn-ghost { border-color: var(--line); background: transparent; color: var(--fg); }
+  .btn-ghost:hover { border-color: var(--muted); }
+  .plate {
+    display: inline-block; font: 700 10px/1 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--brass-ink);
+    padding: 6px 10px; border-radius: 3px; border: 1px solid var(--brass-3);
+    background: linear-gradient(180deg, var(--brass-1), var(--brass-2) 55%, var(--brass-3));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 2px 5px rgba(0,0,0,.4); white-space: nowrap;
+  }
 
-        .accent-text {
-            color: #00c3ff;
-        }
+  /* Header */
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 84%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; gap: 16px; min-height: 64px; padding-right: calc(max(16px, env(safe-area-inset-right, 0px)) + 44px); }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font: 700 16px var(--f-display); letter-spacing: -.01em; }
+  .mono { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(180deg, var(--brass-1), var(--brass-2) 60%, var(--brass-3)); color: var(--brass-ink); font: 800 14px var(--f-display); }
+  .nav { margin-left: auto; display: flex; gap: clamp(14px, 3vw, 30px); }
+  .nav a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--muted); padding: 8px 0; transition: color .2s; }
+  .nav a:hover { color: var(--fg); }
+  .clock { font-size: 12px; font-weight: 500; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .cord {
+    position: fixed; z-index: 30; top: env(safe-area-inset-top, 0px); right: calc(max(16px, env(safe-area-inset-right, 0px)) + 6px);
+    width: 28px; height: 78px; border: 0; background: none; padding: 0; cursor: pointer; display: flex; justify-content: center; align-items: flex-start;
+    transition: transform .25s cubic-bezier(.3, 1.6, .5, 1);
+  }
+  .cord::before { content: ""; width: 2px; height: 62px; background: var(--muted); opacity: .8; }
+  .cord::after { content: ""; position: absolute; top: 58px; width: 14px; height: 18px; border-radius: 7px 7px 9px 9px; background: radial-gradient(circle at 35% 30%, #fff3c4, var(--brass-2) 55%, var(--brass-3)); box-shadow: 0 3px 6px rgba(0,0,0,.4); }
+  .cord:hover { transform: translateY(5px); }
+  .cord.pull { transform: translateY(16px); }
 
-        .accent-bg {
-            background-color: #00c3ff;
-        }
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding-block: clamp(36px, 6vw, 80px) clamp(56px, 8vw, 104px); }
+  .hero::before { content: ""; position: absolute; width: 64vmax; height: 64vmax; right: -22vmax; top: -18vmax; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+  .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .status { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 22px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 rgba(76, 195, 138, .6); animation: ping 2.4s infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 9px rgba(76, 195, 138, 0); } 100% { box-shadow: 0 0 0 0 rgba(76, 195, 138, 0); } }
+  h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(46px, 8.6vw, 100px); line-height: .96; letter-spacing: -.035em; }
+  .iam { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: clamp(10px, 1.6vw, 20px); font: 600 clamp(26px, 4.4vw, 46px)/1.1 var(--f-display); letter-spacing: -.02em; color: var(--muted); }
+  .role-tag { display: inline-grid; background: var(--tag-bg); color: var(--tag-fg); padding: .1em .5em .16em; border-radius: 10px; transform: rotate(-2.4deg); font-weight: 700; box-shadow: 0 16px 30px -16px rgba(0,0,0,.7); overflow: hidden; }
+  .role-tag > * { grid-area: 1 / 1; white-space: nowrap; }
+  .role-tag .ghost { visibility: hidden; }
+  .role-tag .live { animation: roleIn .45s cubic-bezier(.2, .8, .2, 1) both; }
+  .role-tag .live.out { animation: roleOut .26s ease-in both; }
+  @keyframes roleIn { from { opacity: 0; transform: translateY(55%); } to { opacity: 1; transform: none; } }
+  @keyframes roleOut { to { opacity: 0; transform: translateY(-55%); } }
+  .hero .lede { margin-top: clamp(22px, 3vw, 32px); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 14px clamp(24px, 4vw, 44px); margin-top: clamp(32px, 5vw, 52px); padding-top: 22px; border-top: 1px solid var(--line); }
+  .facts dt { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .facts dd { font-weight: 600; font-size: 15px; margin-top: 2px; }
 
-        @keyframes glowingText {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(0, 195, 255, 0.1);
-                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(0, 195, 255, 0.8), 0 0 40px rgba(0, 195, 255, 0.4), 0 0 60px rgba(138, 43, 226, 0.4);
-                -webkit-text-stroke: 1px rgba(0, 195, 255, 1);
-            }
-        }
+  .portrait { position: relative; justify-self: center; width: min(100%, 400px); }
+  .portrait::before { content: ""; position: absolute; inset: -14px; border: 1.5px solid var(--brass-2); border-radius: 999px 999px 38px 38px; opacity: .5; transform: translate(10px, 10px); }
+  .arch { position: relative; aspect-ratio: 800 / 1040; border-radius: 999px 999px 28px 28px; overflow: hidden; background: var(--bg-raise); box-shadow: var(--shadow); }
+  .arch img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .portrait .plate { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); font-size: 11px; padding: 8px 14px; }
 
-        .footer-glow {
-            animation: glowingText 3s infinite ease-in-out;
-        }
+  /* Doors */
+  .work { background: var(--bg-sunk); }
+  .hall {
+    --fh: 26px; display: flex; align-items: flex-end; gap: clamp(14px, 3vw, 36px); padding: 52px 20px var(--fh);
+    border: 1px solid var(--line); border-bottom: 0; border-radius: 24px 24px 0 0;
+    background: linear-gradient(to bottom, var(--wall) calc(100% - var(--fh)), var(--floor) calc(100% - var(--fh)));
+    overflow-x: auto; scroll-snap-type: x proximity; overscroll-behavior-x: contain;
+  }
+  .hall > .door:first-child { margin-left: auto; }
+  .hall > .door:last-child { margin-right: auto; }
+  .door { --dw: clamp(128px, 15.4vw, 184px); flex: 0 0 auto; width: var(--dw); padding: 0; border: 0; background: none; cursor: pointer; scroll-snap-align: center; transition: filter .5s ease; }
+  .door[aria-pressed="true"] { filter: drop-shadow(0 0 26px color-mix(in srgb, var(--door) 50%, transparent)); }
+  .door:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 6px; border-radius: 999px 999px 0 0; }
+  .door-frame { position: relative; display: block; width: 100%; height: calc(var(--dw) * 1.72); padding: 6px 6px 0; background: var(--door-frame); border-radius: 999px 999px 0 0; perspective: 800px; }
+  .door-room, .door-leaf { position: absolute; left: 6px; right: 6px; top: 6px; bottom: 0; border-radius: 999px 999px 0 0; }
+  .door-room { background: radial-gradient(120% 70% at 50% 100%, color-mix(in srgb, var(--door) 60%, #fff) 0%, color-mix(in srgb, var(--door) 42%, #000) 48%, #07090c 100%); }
+  .door-leaf {
+    transform-origin: 0 50%; transition: transform .75s cubic-bezier(.3, .8, .2, 1);
+    background:
+      repeating-linear-gradient(90deg, transparent 0 9px, rgba(0,0,0,.14) 9px 10px),
+      linear-gradient(180deg, color-mix(in srgb, var(--door) 86%, #fff), var(--door));
+    box-shadow: inset 0 0 0 5px rgba(0,0,0,.14), inset 0 0 0 6px rgba(255,255,255,.1), 0 0 0 1px rgba(0,0,0,.28);
+  }
+  .door-leaf::after { content: ""; position: absolute; inset: 11% 12% 6%; border-radius: 999px 999px 6px 6px; box-shadow: inset 0 0 0 2px rgba(0,0,0,.13), inset 0 0 0 3px rgba(255,255,255,.08); }
+  .door:hover .door-leaf, .door:focus-visible .door-leaf { transform: rotateY(16deg); }
+  .door[aria-pressed="true"] .door-leaf { transform: rotateY(68deg); }
+  .door .plate { position: absolute; z-index: 1; left: 50%; top: 40%; transform: translateX(-50%); font-size: clamp(8px, .9vw, 10px); padding: 5px 8px; }
+  .knob { position: absolute; z-index: 1; right: 13%; top: 58%; width: 10%; min-width: 9px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff3c4, var(--brass-2) 55%, var(--brass-3)); box-shadow: 0 2px 3px rgba(0,0,0,.45); }
 
-        @keyframes floatEffect {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+  .panel {
+    --door: var(--door-blue); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 56px);
+    padding: clamp(22px, 4vw, 48px); background: var(--bg-raise); border: 1px solid var(--line); border-top: 3px solid var(--door); border-radius: 0 0 24px 24px;
+  }
+  .panel .tag { display: inline-flex; align-items: center; gap: 10px; font: 600 12px/1 var(--f-body); letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .panel .tag::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--door); }
+  .panel h3 { font-family: var(--f-display); font-weight: 650; font-size: clamp(26px, 3.4vw, 38px); line-height: 1.08; letter-spacing: -.02em; text-wrap: balance; }
+  .blurb { color: var(--muted); margin-top: 14px; max-width: 54ch; }
+  .points { display: grid; gap: 10px; margin: 22px 0; }
+  .points li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 12px; font-size: 15px; }
+  .points li::before { content: ""; width: 8px; height: 8px; margin-top: .55em; border-radius: 2px; background: var(--door); }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .tools li { font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+  .seal { display: flex; align-items: center; gap: 18px; padding: 16px 0; margin-bottom: 18px; border-block: 1px solid var(--line); }
+  .arabic { font-family: var(--f-arabic); font-weight: 700; font-size: clamp(34px, 4.4vw, 46px); line-height: 1.2; color: var(--accent-text); }
+  .seal figcaption { font-size: 14px; color: var(--muted); }
+  .handles { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+  .handles a { color: var(--fg); text-underline-offset: 3px; }
 
-        .animate-float {
-            animation: floatEffect 4s ease-in-out infinite;
-        }
+  .samples { display: grid; grid-template-columns: repeat(var(--c), minmax(0, 1fr)); gap: 12px; --c: var(--cols); min-width: 0; }
+  .slot, .sample { aspect-ratio: var(--ratio); border-radius: 14px; min-width: 0; }
+  .slot { display: grid; place-content: center; justify-items: center; gap: 6px; text-align: center; padding: 8px; border: 1.5px dashed color-mix(in srgb, var(--door) 55%, var(--line)); background: color-mix(in srgb, var(--door) 9%, transparent); color: var(--muted); font-size: 12px; }
+  .slot svg { width: 20px; height: 20px; stroke: var(--door); }
+  .slot small { font-size: 11px; letter-spacing: .1em; font-variant-numeric: tabular-nums; opacity: .8; }
+  .sample { position: relative; overflow: hidden; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.13); box-shadow: 0 12px 30px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.06); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .sample > a { display: block; width: 100%; height: 100%; position: relative; text-decoration: none; }
+  .sample img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
+  .sample video { width: 100%; height: 100%; object-fit: contain; display: block; background: #080b10; }
+  .sample.logo { display: grid; place-items: center; background: #fff; }
+  .sample.logo img { object-fit: contain; padding: 12px; background: transparent; }
+  .sample-caption { position: absolute; z-index: 1; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 16px; overflow-y: auto; background: linear-gradient(180deg, rgba(9,13,20,.08) 8%, rgba(9,13,20,.9) 50%, rgba(9,13,20,.97)); color: #fff; font-size: 12px; line-height: 1.4; opacity: 0; transform: translateY(8px); transition: opacity .22s ease, transform .22s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .sample:hover .sample-caption, .sample:focus-within .sample-caption, .sample:focus-visible .sample-caption { opacity: 1; transform: none; }
+  .sample-title { font: 700 16px/1.2 var(--f-display); }
+  .sample-description { color: rgba(255,255,255,.82); }
+  .sample-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .sample-links a { display: inline-flex; align-items: center; min-height: 30px; padding: 0 10px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(255,255,255,.12); color: #fff; text-decoration: none; font-size: 11px; font-weight: 700; }
+  .sample-links a:hover { background: rgba(255,255,255,.24); }
+  .sample a:focus-visible, .samples:focus-visible { outline: 2px solid var(--accent-text); outline-offset: -3px; border-radius: inherit; }
+  .logo-gallery { scrollbar-width: thin; scrollbar-color: var(--muted) transparent; }
+  @media (max-width: 640px) {
+    .samples.logo-gallery { display: flex; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 2px; padding: 0 2px 12px; -webkit-overflow-scrolling: touch; }
+    .samples.logo-gallery .sample { flex: 0 0 min(76vw, 270px); scroll-snap-align: start; }
+    .samples.logo-gallery .sample-caption { opacity: 1; transform: none; padding: 12px; gap: 5px; background: linear-gradient(180deg, transparent 12%, rgba(9,13,20,.88) 58%, rgba(9,13,20,.97)); font-size: 11px; }
+    .samples.logo-gallery .sample-title { font-size: 15px; }
+    .samples.logo-gallery .sample.logo img { padding: 8px; }
+  }
 
-        .huge-bg-text {
-            font-size: 10rem;
-            line-height: 1;
-            font-weight: 700;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-            white-space: nowrap;
-        }
+  /* Story */
+  .story-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 96px); }
+  .about-card { display: grid; grid-template-columns: minmax(160px, .34fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 40px); align-items: center; max-width: 860px; margin: clamp(44px, 7vw, 80px) auto 0; padding: clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 22px; background: var(--bg-raise); }
+  .about-card img { width: 100%; height: clamp(210px, 28vw, 320px); display: block; object-fit: cover; object-position: center 26%; border-radius: 14px; }
+  .about-card figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+  .about-copy h3 { font: 700 clamp(22px, 3vw, 30px)/1.15 var(--f-display); margin-bottom: 10px; }
+  .about-copy p { color: var(--muted); max-width: 48ch; }
+  .sticky { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 96px); align-self: start; }
+  .chapter-label { font: 800 clamp(64px, 10vw, 136px)/.95 var(--f-display); letter-spacing: -.04em; margin-top: clamp(20px, 3vw, 36px); }
+  .chapter-label span { display: inline-block; }
+  .chapter-label span.swap { animation: roleIn .5s cubic-bezier(.2, .8, .2, 1) both; }
+  .chapters { display: grid; gap: clamp(40px, 6vw, 84px); }
+  .chapter { position: relative; padding-left: 30px; border-left: 1px solid var(--line); transition: border-color .3s; }
+  .chapter::before { content: ""; position: absolute; left: -6px; top: 8px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg-sunk); border: 1px solid var(--muted); transition: background-color .3s, border-color .3s; }
+  .chapter.on { border-left-color: var(--brass-2); }
+  .chapter.on::before { background: var(--brass-2); border-color: var(--brass-2); }
+  .ch-tag { display: none; font: 800 44px/1 var(--f-display); letter-spacing: -.03em; margin-bottom: 10px; }
+  .chapter h3 { font-family: var(--f-display); font-weight: 650; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.15; letter-spacing: -.015em; margin-bottom: 10px; }
+  .chapter p { color: var(--muted); max-width: 52ch; }
+  .chapter ul { margin-top: 12px; display: grid; gap: 6px; font-size: 15px; }
+  .chapter li::before { content: "+ "; color: var(--accent-text); font-weight: 700; }
+  .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-top: clamp(56px, 8vw, 104px); }
+  .kit > div { border-top: 1px solid var(--line); padding-top: 18px; }
+  .kit h3 { font: 600 12px/1 var(--f-body); letter-spacing: .15em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 14px; }
+  .kit li { padding: 5px 0; font-size: 15px; }
 
-        .pill-badge {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 9999px;
-            padding: 0.5rem 1.5rem;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
+  /* Process */
+  .steps-sec { background: var(--bg-sunk); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 28px; counter-reset: s; }
+  .steps li { counter-increment: s; border-top: 1px solid var(--line); padding-top: 18px; }
+  .steps li::before { content: counter(s, decimal-leading-zero); display: block; font: 800 40px/1 var(--f-display); letter-spacing: -.03em; color: var(--accent-text); margin-bottom: 14px; font-variant-numeric: tabular-nums; }
+  .steps h3 { font: 650 20px/1.2 var(--f-display); margin-bottom: 8px; }
+  .steps p { color: var(--muted); font-size: 15px; max-width: 34ch; }
 
-        .pill-badge:hover {
-            border-color: #00c3ff;
-            color: #00c3ff;
-            background: rgba(0, 195, 255, 0.1);
-        }
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(28px, 6vw, 80px); align-items: start; }
+  .brief { display: grid; gap: 18px; padding: clamp(20px, 3.4vw, 36px); background: var(--bg-raise); border: 1px solid var(--line); border-radius: 24px; }
+  .brief fieldset { border: 0; padding: 0; margin: 0; min-inline-size: 0; }
+  .brief legend, .brief label.l { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 10px; padding: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; cursor: pointer; transition: background-color .2s, color .2s; }
+  .chip input:checked + span { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .chip input:focus-visible + span { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+  .field { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font: 400 16px/1.5 var(--f-body); resize: vertical; }
+  .field::placeholder { color: var(--muted); opacity: .8; }
+  .preview { padding: 14px 16px; border-radius: 12px; background: var(--bg-sunk); border: 1px dashed var(--line); }
+  .preview .l { margin-bottom: 6px; }
+  .preview p { white-space: pre-wrap; font-size: 14px; overflow-wrap: anywhere; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .hint { font-size: 13px; color: var(--muted); }
+  .reach { display: grid; gap: 4px; }
+  .reach > div { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .reach dt { flex: 0 0 100%; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .reach dd { font: 600 17px/1.3 var(--f-display); overflow-wrap: anywhere; user-select: all; min-width: 0; }
+  .reach a { text-underline-offset: 3px; }
+  .copy { margin-left: auto; min-height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .copy:hover { border-color: var(--muted); }
+  .foot { border-top: 1px solid var(--line); padding-block: 28px; font-size: 13px; color: var(--muted); }
+  .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-fade-in-up {
-            opacity: 0;
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-play-state: paused; /* wait for load */
-        }
-
-        body.loaded .animate-fade-in-up {
-            animation-play-state: running;
-        }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .reveal.delay-100 { transition-delay: 0.1s; }
-        .reveal.delay-200 { transition-delay: 0.2s; }
-        .reveal.delay-300 { transition-delay: 0.3s; }
-    </style>
+  @media (max-width: 900px) {
+    .clock { display: none; }
+    .hall { padding-inline: 16px; }
+    .door { --dw: 136px; }
+  }
+  @media (max-width: 859px) {
+    .hero-grid, .story-grid, .contact-grid, .panel { grid-template-columns: minmax(0, 1fr); }
+    .portrait { width: min(80%, 340px); margin-top: 8px; }
+    .sticky { display: none; }
+    .ch-tag { display: block; }
+  }
+  @media (max-width: 600px) {
+    .brand span:last-child { display: none; }
+    .samples { --c: var(--cols-sm); }
+    .nav { gap: 16px; }
+    .about-card { grid-template-columns: minmax(0, 1fr); }
+    .about-card img { height: min(78vw, 360px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  }
+</style>
 </head>
+<body>
 
-<body class="relative min-h-screen flex flex-col">
-    <!-- Loader Sequence -->
-    <div id="loader" class="fixed inset-0 bg-[#050505] z-[100] flex flex-col items-center justify-center transition-all duration-[800ms] ease-in-out">
-        <div class="relative w-16 h-16 mb-6">
-            <div class="absolute inset-0 border-4 border-[#00c3ff]/20 rounded-full"></div>
-            <div class="absolute inset-0 border-4 border-[#00c3ff] rounded-full border-t-transparent animate-spin"></div>
-            <div class="absolute inset-5 bg-[#00c3ff]/30 rounded-full animate-pulse"></div>
-        </div>
-        <h2 class="text-[#00c3ff] tracking-[0.4em] uppercase font-mono text-xs animate-pulse">INITIALIZING</h2>
-    </div>
-
-    <div class="noise-overlay"></div>
-
-    <!-- Navigation -->
-    <nav
-        class="fixed top-0 w-full z-40 px-10 py-6 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5">
-        <div class="flex items-center space-x-12 w-full max-w-7xl mx-auto">
-            <div class="accent-bg text-black font-bold px-4 py-2 text-sm uppercase tracking-wider">
-                Creative Strategist
-            </div>
-
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="nav-link active">About Me</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#project" class="nav-link">Project</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-
-            <div class="flex-grow hidden md:flex items-center justify-end">
-                <div class="h-px bg-white/40 w-32 relative">
-                    <div
-                        class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full border border-white bg-transparent">
-                    </div>
-                </div>
-            </div>
-        </div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Osama Saleem, back to top"><span class="mono">OS</span><span>Osama Saleem</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#story">Story</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <span class="clock" id="clock">Karachi, PKT</span>
+  </div>
+</header>
+<button class="cord" id="cord" type="button" aria-label="Switch to light theme" aria-pressed="false"></button>
 
-    <main class="flex-grow pt-32">
-        <!-- Hero Section -->
-        <section id="home"
-            class="min-h-[85vh] w-full flex flex-col md:flex-row items-center relative px-6 md:px-10 max-w-7xl mx-auto pb-20 md:pb-0">
-
-            <!-- Text Content -->
-            <div
-                class="w-full md:w-[55%] z-20 relative text-center md:text-left flex flex-col items-center md:items-start pt-48 mt-16 md:pt-10 md:mt-0">
-                <p class="animate-fade-in-up delay-100 accent-text text-sm md:text-base mb-4 font-mono tracking-widest uppercase">Welcome To My World
-                </p>
-                <h1
-                    class="animate-fade-in-up delay-200 text-6xl md:text-8xl lg:text-[8rem] font-bold leading-[0.9] mb-8 mt-0 tracking-tighter w-full text-white drop-shadow-lg">
-                    Osama Saleem
-                </h1>
-                <div
-                    class="animate-fade-in-up delay-300 animate-float accent-bg text-black px-6 md:px-8 py-2 md:py-3 lg:py-2 rounded-full text-sm md:text-base lg:text-sm font-bold uppercase tracking-widest mb-10 shadow-[0_0_20px_rgba(0,195,255,0.4)]">
-                    Creative Strategist & Video Editor
-                </div>
-                <p class="animate-fade-in-up delay-400 text-gray-400 text-base md:text-lg max-w-lg leading-relaxed mb-10 md:mb-0 md:pb-20">
-                    Creative and results-driven professional with 5+ years of experience delivering high-impact,
-                    conversion-focused visual content globally. Specialized in <span
-                        class="text-white font-semibold">Brand Identity</span>, <span
-                        class="text-white font-semibold">Social Media Design</span>, and <span
-                        class="text-white font-semibold">Whiteboard Animations</span>.
-                </p>
-            </div>
-
-            <!-- Image/Visual Content -->
-            <div
-                class="absolute inset-0 md:relative w-full md:w-[45%] h-full flex flex-col items-center justify-center md:items-end md:justify-end opacity-40 md:opacity-100 z-0 pointer-events-none overflow-hidden md:overflow-visible">
-
-                <!-- Modern Image Container -->
-                <div class="absolute inset-0 w-full h-full md:relative md:h-[80vh] md:max-w-lg bottom-0 flex items-end">
-                    <!-- Gradients to blend image cleanly into background -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-20">
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-l from-[#050505] via-transparent to-transparent z-20 hidden md:block">
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/20 to-transparent z-20 hidden md:block">
-                    </div>
-
-                    <!-- Decorative accent glow -->
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#00c3ff] rounded-full blur-[120px] opacity-30 z-0 hidden md:block">
-                    </div>
-
-                    <!-- Profile Image -->
-                    <img src="assert/profile.jpeg" alt="Osama Saleem Profile"
-                        class="absolute inset-0 md:relative w-full h-full object-cover object-top z-10 hover:scale-[1.02] transition-all duration-700"
-                        onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop'" />
-                </div>
-            </div>
-
-            <!-- Bottom Tracking Line -->
-            <div
-                class="absolute bottom-10 left-6 md:left-10 w-[calc(100%-48px)] md:w-[calc(100%-80px)] flex items-center z-30">
-                <div class="animate-pulse w-2 h-2 rounded-full border border-white bg-transparent mr-4 shadow-[0_0_10px_#fff]"></div>
-                <div class="h-px bg-white/40 flex-grow mr-4 hidden md:block"></div>
-                <div class="h-px bg-white/20 flex-grow mr-4 md:hidden"></div>
-                <div class="text-xs md:text-sm tracking-widest text-white/50 font-mono">EST. 2026</div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about"
-            class="min-h-screen py-24 md:py-32 relative px-6 md:px-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center overflow-hidden">
-            <div class="reveal w-full md:w-5/12 relative mb-16 md:mb-0">
-                <!-- Dotted grid decoration -->
-                <div class="absolute -top-10 -right-10 grid grid-cols-4 gap-4 opacity-50 z-0 hidden md:grid">
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                </div>
-                <!-- Second image for biography -->
-                <img src="assert/about.jpeg" alt="Biography Portrait" class="w-full relative z-10 rounded-sm"
-                    onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop'">
-            </div>
-            <div class="w-full md:w-7/12 pl-0 md:pl-20">
-                <h2 class="reveal delay-100 text-4xl md:text-5xl font-bold mb-6 tracking-wide uppercase shadow-none relative z-10">My
-                    Biography</h2>
-                <div class="reveal delay-100 w-32 md:w-48 h-1.5 accent-bg mb-10"></div>
-                <p class="reveal delay-200 text-gray-400 mb-6 leading-relaxed relative z-10">
-                    With over 5 years of professional experience handling global clientele on Upwork and direct
-                    channels, I am highly proficient in producing high-converting visual assets. Being fluent in Canva
-                    Pro, CapCut, and advanced graphic suites is my secret to building scalable setups quickly.
-                </p>
-                <p class="text-gray-400 mb-12 leading-relaxed relative z-10">
-                    Combining technical precision with creative strategy, I help brands stand out. Whether it's crafting
-                    a memorable brand identity from scratch, editing dynamic whiteboard animations, or designing
-                    cohesive social media kits, my goal is delivering consistent, quality work tailored to your
-                    marketing goals.
-                </p>
-
-                <h3 class="reveal delay-300 text-xl font-bold mb-6 relative z-10">Skills & Expertise</h3>
-                <div class="reveal delay-300 flex flex-wrap gap-3 md:gap-4 relative z-10">
-                    <span class="pill-badge">Video Editing</span>
-                    <span class="pill-badge">CapCut Expert</span>
-                    <span class="pill-badge">Graphic Design</span>
-                    <span class="pill-badge">Brand Identity</span>
-                    <span class="pill-badge">Canva Expert</span>
-                    <span class="pill-badge">Motion Graphics</span>
-                    <span class="pill-badge">Whiteboard Animation</span>
-                    <span class="pill-badge">Client Handling</span>
-                </div>
-            </div>
-
-            <div
-                class="absolute bottom-10 left-6 md:left-10 w-[calc(100%-48px)] md:w-[calc(100%-80px)] flex items-center z-10">
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent mr-4"></div>
-                <div class="h-px bg-white/40 flex-grow mr-4"></div>
-                <div class="text-sm tracking-widest text-white/60">PORTFOLIO 2026</div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education"
-            class="min-h-screen py-24 md:py-32 relative px-6 md:px-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center">
-            <div
-                class="absolute inset-0 flex justify-center items-center pointer-events-none opacity-20 hidden md:flex">
-                <span class="huge-bg-text" style="top: 25%;">2017 - 2024</span>
-            </div>
-
-            <div class="reveal w-full md:w-1/2 pr-0 md:pr-10 relative z-10 mb-16 md:mb-0">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase">Education<br>& Certs</h2>
-                <div class="w-32 md:w-48 h-1.5 accent-bg mb-10"></div>
-                <p class="text-gray-400 leading-relaxed">
-                    A solid foundation in both technical engineering and creative IT training. Combining a systemic
-                    approach from Software Engineering with professional artistic certifications to deliver technically
-                    sound and visually stunning results.
-                </p>
-            </div>
-            <div class="reveal delay-200 w-full md:w-1/2 pl-0 md:pl-10 relative z-10">
-                <div class="mb-10">
-                    <h3 class="text-xl font-bold mb-2">Bachelor's Degree</h3>
-                    <p class="text-gray-400">Software Engineering</p>
-                </div>
-                <div class="mb-10">
-                    <h3 class="text-xl font-bold mb-2">Intermediate (FSc)</h3>
-                    <p class="text-gray-400">Fazaia Inter College | Graduated 2017</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Professional Certifications</h3>
-                    <p class="text-gray-400">Saylani Mass IT Training (SMIT) | Advanced Graphic Design & Video Editing
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="absolute bottom-10 left-6 md:left-10 w-[calc(100%-48px)] md:w-[calc(100%-80px)] flex items-center z-10">
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent mr-4"></div>
-                <div class="h-px bg-white/40 flex-grow mr-4"></div>
-                <div class="text-sm tracking-widest text-white/60">PORTFOLIO 2026</div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience"
-            class="min-h-screen py-24 md:py-32 relative px-6 md:px-10 max-w-7xl mx-auto flex flex-col justify-center">
-            <div
-                class="absolute inset-0 flex justify-center items-center pointer-events-none opacity-20 hidden md:flex">
-                <span class="huge-bg-text" style="top: 20%;">2020 - PRESENT</span>
-            </div>
-
-            <h2 class="reveal text-4xl md:text-5xl font-bold mb-6 uppercase relative z-10 mt-10 md:mt-0">Experience</h2>
-            <div class="reveal delay-100 w-32 md:w-48 h-1.5 accent-bg mb-16 relative z-10"></div>
-
-            <div class="space-y-12 md:space-y-16 relative z-10">
-                <div class="reveal delay-200 flex flex-col md:flex-row items-start">
-                    <div class="w-full md:w-1/2 flex gap-4 mb-4 md:mb-0">
-                        <div class="text-3xl accent-text font-bold leading-none">»</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Freelance Designer & Editor</h3>
-                            <p class="text-gray-400">Upwork & Direct Clients | 2020 - Present</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-10 ml-8 md:ml-0">
-                        <p class="text-gray-400 leading-relaxed">
-                            <strong class="text-white">Brand Identity & Logos:</strong> Conceptualized and designed
-                            modern, minimalist logos and visual guidelines for diverse startups and businesses globally.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="reveal delay-300 flex flex-col md:flex-row items-start">
-                    <div class="w-full md:w-1/2 flex gap-4 mb-4 md:mb-0">
-                        <div class="text-3xl accent-text font-bold leading-none">»</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Video Editing & Motion</h3>
-                            <p class="text-gray-400">Upwork & Direct Clients | 2020 - Present</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-10 ml-8 md:ml-0">
-                        <p class="text-gray-400 leading-relaxed">
-                            <strong class="text-white">Whiteboard & Promo Videos:</strong> Storyboarded, edited, and
-                            produced high-converting whiteboard animation videos and promotional clips for marketing
-                            campaigns including color grading and splicing.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="reveal delay-400 flex flex-col md:flex-row items-start">
-                    <div class="w-full md:w-1/2 flex gap-4 mb-4 md:mb-0">
-                        <div class="text-3xl accent-text font-bold leading-none">»</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Canva Power User</h3>
-                            <p class="text-gray-400">Upwork & Direct Clients | 2020 - Present</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-10 ml-8 md:ml-0">
-                        <p class="text-gray-400 leading-relaxed">
-                            <strong class="text-white">Digital Marketing Kits:</strong> Rapidly produced high-quality,
-                            editable templates, pitch decks, and cohesive social media kits, managing end-to-end client
-                            communication and ensuring target milestones are met.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="reveal delay-500 flex flex-col md:flex-row items-start">
-                    <div class="w-full md:w-1/2 flex gap-4 mb-4 md:mb-0">
-                        <div class="text-3xl accent-text font-bold leading-none">»</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">CapCut Pro Editor</h3>
-                            <p class="text-gray-400">Freelance Projects | 2021 - Present</p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-10 ml-8 md:ml-0">
-                        <p class="text-gray-400 leading-relaxed">
-                            <strong class="text-white">Dynamic Short-Form Content:</strong> Specialized in high-retention video editing for TikTok, Reels, and YouTube Shorts using advanced CapCut features including complex keyframing, trending transitions, masking, and precise audio-syncing.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="absolute bottom-10 left-6 md:left-10 w-[calc(100%-48px)] md:w-[calc(100%-80px)] flex items-center z-10">
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent mr-4"></div>
-                <div class="h-px bg-white/40 flex-grow mr-4"></div>
-                <div class="text-sm tracking-widest text-white/60">PORTFOLIO 2026</div>
-            </div>
-        </section>
-
-        <!-- Project Section -->
-        <section id="project"
-            class="min-h-screen py-24 md:py-32 relative px-6 md:px-10 max-w-7xl mx-auto flex flex-col justify-center">
-            <div
-                class="absolute inset-0 flex justify-center items-center pointer-events-none opacity-20 hidden md:flex">
-                <span class="huge-bg-text"
-                    style="top: 15%; right: -20%; transform: rotate(90deg); transform-origin: right top; font-size: 8rem;">2022
-                    - 2023</span>
-            </div>
-
-            <div class="reveal flex flex-col md:flex-row items-start md:items-center mb-16 relative z-10 mt-10 md:mt-0">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 uppercase">Selected Project</h2>
-                    <div class="w-32 md:w-48 h-1.5 accent-bg mb-10 md:mb-0"></div>
-                </div>
-                <!-- Dotted grid decoration -->
-                <div class="ml-0 md:ml-10 grid grid-cols-4 gap-4 opacity-50 z-0 hidden md:grid">
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                    <div class="w-1.5 h-1.5 rounded-full accent-bg"></div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 relative z-10">
-                <!-- Project 1 -->
-                <div class="reveal delay-100">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop"
-                        alt="Brand Identity" class="w-full h-64 object-cover mb-6">
-                    <h3 class="text-xl font-bold mb-4">Brand Identity Designs</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Designed and developed modern Logos and complete Brand Identities for startups and businesses
-                        globally. Created strong layouts delivering clean and engaging designs.
-                    </p>
-                </div>
-                <!-- Project 2 -->
-                <div class="reveal delay-200">
-                    <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=600&auto=format&fit=crop"
-                        alt="Social Media Kits" class="w-full h-64 object-cover mb-6">
-                    <h3 class="text-xl font-bold mb-4">Social Media & Marketing Creatives</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Created high-quality Social Media Kits and Visual content aligned with Brand strategy. Utilized
-                        Canva to produce fast, editable setup files.
-                    </p>
-                </div>
-                <!-- Project 3 -->
-                <div class="reveal delay-300">
-                    <a href="https://www.youtube.com/@Shadow-0001" target="_blank" class="block relative group">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=600&auto=format&fit=crop"
-                            alt="Video Editing"
-                            class="w-full h-64 object-cover mb-6 group-hover:opacity-80 transition duration-300">
-                        <div
-                            class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition duration-300">
-                            <span class="bg-red-600 text-white px-4 py-2 rounded-full font-bold">Watch on YouTube</span>
-                        </div>
-                    </a>
-                    <h3 class="text-xl font-bold mb-4">Whiteboard & Promo Videos</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">
-                        Edited professional video content including Whiteboard animations. Performed advanced video
-                        cutting, splicing, and color grading to elevate visual storytelling.
-                    </p>
-                </div>
-            </div>
-
-            <div
-                class="absolute bottom-10 left-6 md:left-10 w-[calc(100%-48px)] md:w-[calc(100%-80px)] flex items-center z-10">
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent mr-4"></div>
-                <div class="h-px bg-white/40 flex-grow mr-4"></div>
-                <div class="text-sm tracking-widest text-white/60">PORTFOLIO 2026</div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Contact Section / Footer -->
-    <footer id="contact" class="min-h-screen relative flex flex-col justify-center items-center">
-        <div class="reveal w-full max-w-7xl mx-auto px-6 md:px-10 text-center relative z-10 mb-20 mt-20 md:mt-0">
-            <h2 class="text-4xl md:text-5xl font-bold mb-2 uppercase">Get In Touch</h2>
-            <p class="accent-text text-sm italic font-mono mb-12 md:mb-20">Let's Work Together</p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Phone -->
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-[#00c3ff] flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-[#00c3ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold mb-2 md:mb-4">Phone & Mobile</h3>
-                    <a href="https://wa.me/923212251851" target="_blank"
-                        class="text-gray-400 hover:text-white transition-colors text-sm">0321-2251851</a>
-                </div>
-
-                <!-- Email -->
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-[#00c3ff] flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-[#00c3ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold mb-2 md:mb-4">Email Address</h3>
-                    <a href="mailto:osamasaleem0001@gmail.com"
-                        class="text-gray-400 hover:text-white transition-colors text-sm">osamasaleem0001@gmail.com</a>
-                </div>
-
-                <!-- Address -->
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-[#00c3ff] flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-[#00c3ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold mb-2 md:mb-4">Location</h3>
-                    <p class="text-gray-400 text-sm">Karachi, Pakistan</p>
-                </div>
-
-                <!-- Social -->
-                <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full border border-[#00c3ff] flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-[#00c3ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold mb-2 md:mb-4">YouTube Channel</h3>
-                    <a href="https://www.youtube.com/@Shadow-0001" target="_blank"
-                        class="text-gray-400 hover:text-white transition-colors text-sm">@Shadow-0001</a>
-                </div>
-            </div>
+<main id="top">
+  <section class="hero" aria-labelledby="hi">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="status"><span class="dot" aria-hidden="true"></span>Open to new projects</p>
+        <h1 id="hi">Hi, I'm Osama.</h1>
+        <p class="iam"><span>I am a</span><span class="role-tag" id="role-tag"><span class="live" id="role-live">Graphic Designer</span></span></p>
+        <p class="sr">Graphic designer, video editor and calligrapher based in Karachi.</p>
+        <p class="lede">I design brands, social content and videos that help businesses stand out. Five years of freelance work for Upwork and direct clients around the world.</p>
+        <div class="cta">
+          <a class="btn btn-brass" href="#contact">Start a project</a>
+          <a class="btn btn-ghost" href="#work">See the work</a>
         </div>
+        <dl class="facts">
+          <div><dt>Experience</dt><dd>5+ years</dd></div>
+          <div><dt>Clients</dt><dd>Upwork and direct</dd></div>
+          <div><dt>Based in</dt><dd>Karachi, Pakistan</dd></div>
+        </dl>
+      </div>
+      <div class="portrait">
+        <div class="arch"><img src="assert/my%20images/profile.jpeg" width="686" height="667" alt="Osama Saleem" fetchpriority="high"></div>
+        <span class="plate">Osama Saleem</span>
+      </div>
+    </div>
+  </section>
 
-        <div class="reveal delay-200 w-full px-6 md:px-10 relative z-10 flex flex-col items-center">
-            <div class="w-full flex items-center max-w-7xl mx-auto mb-8 cursor-default">
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent mr-4 flex-shrink-0"></div>
-                <div class="h-px bg-white/40 flex-grow"></div>
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent ml-4 flex-shrink-0"></div>
-            </div>
+  <section class="work" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Selected work</p>
+        <h2 id="work-h">Open a door to see the work</h2>
+        <p class="lede">Explore brand identities, social designs, video edits and original calligraphy, including selected client logos and work from Osama Arts Studio.</p>
+      </div>
+      <div class="hall" id="hall" role="group" aria-label="Services"></div>
+      <div class="panel" id="panel" aria-live="polite"></div>
+    </div>
+  </section>
 
-            <h1 class="footer-glow text-4xl sm:text-6xl md:text-9xl font-bold uppercase text-transparent tracking-widest w-full text-center hover:text-[#00c3ff] transition-colors duration-500 cursor-default"
-                style="-webkit-text-stroke: 1px rgba(255,255,255,0.4);">
-                Osama Saleem
-            </h1>
-
-            <div class="w-full flex items-center max-w-7xl mx-auto mt-8 mb-4">
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent mr-2 md:mr-4 flex-shrink-0"></div>
-                <div class="h-px bg-white/40 flex-grow mx-2 md:mx-4"></div>
-                <div class="text-[10px] md:text-sm tracking-widest text-white/60 flex-shrink-0">PORTFOLIO 2026</div>
-                <div class="h-px bg-white/40 flex-grow mx-2 md:mx-4"></div>
-                <div class="w-2 h-2 rounded-full border border-white bg-transparent ml-2 md:ml-4 flex-shrink-0"></div>
-            </div>
+  <section id="story" aria-labelledby="story-h">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="sticky">
+          <p class="kicker">My story</p>
+          <h2 id="story-h">How I got here</h2>
+          <p class="chapter-label" aria-hidden="true"><span id="chapter-label">2017</span></p>
         </div>
-    </footer>
+        <div class="chapters" id="chapters">
+          <article class="chapter on" data-label="2017">
+            <p class="ch-tag" aria-hidden="true">2017</p>
+            <h3>Finished intermediate</h3>
+            <p>Graduated FSc (Intermediate) in 2017, then went on to a Bachelor's degree in Software Engineering. That background still shapes how I think about systems, structure and clean files.</p>
+          </article>
+          <article class="chapter" data-label="Training">
+            <p class="ch-tag" aria-hidden="true">Training</p>
+            <h3>Saylani Mass IT Training</h3>
+            <p>Two professional certificates from SMIT, where I trained in the craft behind the work.</p>
+            <ul><li>Advanced Graphic Design</li><li>Video Editing &amp; Motion Graphics</li></ul>
+          </article>
+          <article class="chapter" data-label="2020">
+            <p class="ch-tag" aria-hidden="true">2020</p>
+            <h3>Freelancing begins</h3>
+            <p>Started working as a freelance graphic designer and video editor on Upwork and with direct clients. Logos, brand identities, social media kits, promo videos and whiteboard animations for startups and businesses.</p>
+          </article>
+          <article class="chapter" data-label="Studio">
+            <p class="ch-tag" aria-hidden="true">Studio</p>
+            <h3>Osama Arts Studio</h3>
+            <p>My Islamic calligraphy business. Handmade canvas artwork, custom orders and calligraphy videos on YouTube, where the channel passed 1,000 subscribers.</p>
+          </article>
+          <article class="chapter" data-label="Today">
+            <p class="ch-tag" aria-hidden="true">Today</p>
+            <h3>Five years in, still building</h3>
+            <p>Brand identity, social media design and whiteboard animation for international clients, alongside new calligraphy series for the studio.</p>
+          </article>
+        </div>
+      </div>
+      <figure class="about-card">
+        <div><img src="assert/my%20images/about.jpeg" width="960" height="1280" alt="Osama Saleem outdoors with his guitar" loading="lazy"><figcaption>Osama Saleem · Karachi, Pakistan</figcaption></div>
+        <div class="about-copy"><h3>A little beyond the screen</h3><p>Based in Karachi, I bring the same creative focus to graphic design, video editing and calligraphy.</p></div>
+      </figure>
+      <div class="kit">
+        <div><h3>Tools</h3><ul><li>Canva Pro (expert)</li><li>CapCut</li></ul></div>
+        <div><h3>Working style</h3><ul><li>Clear communication</li><li>Time management</li><li>Creative problem solving</li><li>Client handling</li></ul></div>
+        <div><h3>Languages</h3><ul><li>Urdu</li><li>English</li></ul></div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Trigger loading screen fade out and initialization animations
-        window.addEventListener('load', function () {
-            // Slight artificial delay so the loader is visible for a minimum elegant duration
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                
-                // Add class to un-pause the staggered text animations
-                document.body.classList.add('loaded');
-                
-                // Fade out loader
-                loader.style.opacity = '0';
-                loader.style.visibility = 'hidden';
-                
-                // Remove loader from DOM flow completely after fade completes
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 800);
-            }, 600);
-        });
+  <section class="steps-sec" aria-labelledby="steps-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Process</p>
+        <h2 id="steps-h">How a project runs</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Brief</h3><p>You share the goal, the audience and the deadline. I ask questions until the requirements are clear.</p></li>
+        <li><h3>Draft</h3><p>You get a first design or edit to react to, so direction is settled early.</p></li>
+        <li><h3>Revisions</h3><p>We refine it together until it matches your brand and your vision.</p></li>
+        <li><h3>Delivery</h3><p>Final files arrive on time, and editable in Canva wherever that helps your team.</p></li>
+      </ol>
+    </div>
+  </section>
 
-        // Intersection Observer for scroll reveal animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -100px 0px',
-                threshold: 0.1
-            };
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Contact</p>
+        <h2 id="contact-h">Have a project in mind?</h2>
+        <p class="lede">Pick what you need, add a few lines, and send it to me on WhatsApp or by email.</p>
+      </div>
+      <div class="contact-grid">
+        <form class="brief" id="brief" autocomplete="off">
+          <fieldset>
+            <legend>What do you need?</legend>
+            <div class="chips" id="chips"></div>
+          </fieldset>
+          <div>
+            <label class="l" for="b-name">Your name</label>
+            <input class="field" id="b-name" type="text" placeholder="Name or business">
+          </div>
+          <div>
+            <label class="l" for="b-msg">About the project</label>
+            <textarea class="field" id="b-msg" rows="4" placeholder="What are you making, who is it for, and when do you need it?"></textarea>
+          </div>
+          <div class="preview">
+            <p class="l" style="font-size:12px;font-weight:600;color:var(--muted)">Your brief</p>
+            <p id="b-preview"></p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-brass" id="b-wa" href="https://wa.me/923212251851" target="_blank" rel="noopener">Open WhatsApp</a>
+            <button class="btn btn-ghost" id="b-copy" type="button">Copy brief</button>
+            <span class="hint" id="b-status" role="status"></span>
+          </div>
+          <p class="hint">WhatsApp opens in a new tab with the brief filled in. Press send there. For email, copy the brief and paste it into your message.</p>
+        </form>
+        <dl class="reach">
+          <div><dt>Email</dt><dd id="r-mail">osamasaleem0001@gmail.com</dd><button class="copy" type="button" data-copy="osamasaleem0001@gmail.com">Copy</button></div>
+          <div><dt>WhatsApp and phone</dt><dd id="r-phone">0321 2251851</dd><button class="copy" type="button" data-copy="03212251851">Copy</button></div>
+          <div><dt>Calligraphy on Instagram</dt><dd><a href="https://www.instagram.com/Calligraphy_by_Osama/" target="_blank" rel="noopener">@Calligraphy_by_Osama</a></dd></div>
+          <div><dt>Based in</dt><dd>Karachi, Pakistan</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Stop observing once animated
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+<footer class="foot">
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Osama Saleem</span>
+    <span>Graphic Designer &amp; Video Editor, Karachi</span>
+  </div>
+</footer>
 
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach(el => observer.observe(el));
-        });
-    </script>
-</body>
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 
-</html>
+  /* Work data. Add real samples as { src: 'path.jpg', alt: 'description' } inside a service's samples list. */
+  var SERVICES = [
+    { key: 'branding', plate: 'Branding', door: 'blue', chip: 'Brand identity & logo',
+      title: 'Brand identity and logo design',
+      blurb: 'A selection of product and business marks, from finance and restaurant apps to collaboration and family-safety products.',
+      points: ['Logo design', 'Visual system: colour, type and layout', 'Brand guidelines', 'Editable Canva templates your team can keep using'],
+      tools: ['Canva Pro'], cols: 3, colsSm: 2, ratio: '1 / 1', ratioLabel: '1:1', slots: 9, samples: [
+        { src: 'assert/logo/becon%20eye.png', alt: 'Beacon Eye child-safety brand logo', kind: 'logo', title: 'Beacon Eye', detail: 'Child-monitoring brand with synchronized mobile and browser tools. Parent alerts are designed to arrive within seconds.', links: [] },
+        { src: 'assert/logo/smartax%20global.png', alt: 'SMARTax Global business analytics logo', kind: 'logo', title: 'SMARTax Global', detail: 'Cross-border finance and tax platform for bookkeeping and business advisory, with an AI assistant and analytics.', links: [{ label: 'Live website', href: 'https://frontend-xi-six-7ro19fc0f4.vercel.app/' }] },
+        { src: 'assert/logo/dinease.jpeg', alt: 'Dinease restaurant QR-ordering logo', kind: 'logo', title: 'Dinease', detail: 'Restaurant management and table ordering, with real-time kitchen updates and offline support.', links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nextgenesol.dinease&pcampaignid=web_share' }, { label: 'App Store', href: 'https://apps.apple.com/pe/app/dinease-smart-dining/id6761814498' }] },
+        { src: 'assert/logo/digifund.png', alt: 'Digi Fund Nest global logistics logo', kind: 'logo', title: 'Digi Fund Nest', detail: 'Supply-chain and logistics platform built for high-volume transactions and reliable background processing.', links: [{ label: 'GitHub', href: 'https://github.com/Muhammad834565/DigiFund' }] },
+        { src: 'assert/logo/dressia.jpeg', alt: 'Dressia clothing brand monogram', kind: 'logo', title: 'Dressia', detail: 'Smart wardrobe app for organizing clothing, with weather-aware outfit suggestions.', links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nextgenesol.dressly&hl=en' }, { label: 'App Store', href: 'https://apps.apple.com/in/app/dressia-closet-redefined/id6769307805' }] },
+        { src: 'assert/logo/zenpense.jpeg', alt: 'Zenpense personal finance app logo', kind: 'logo', title: 'Zenpense', detail: 'Local-first money manager with quick access to personal finance records.', links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nextgenesol.flexigridassistant' }, { label: 'App Store', href: 'https://apps.apple.com/us/app/zenpense-money-manager/id6760641117' }] },
+        { src: 'assert/logo/vectorcollab.png', alt: 'Vector Collab collaboration platform logo', kind: 'logo', title: 'Vector Collab', detail: 'Collaborative AI workspace with real-time conversations, semantic search and multi-agent workflows.', links: [{ label: 'Live demo', href: 'https://test-rag-tawny.vercel.app/' }] },
+        { src: 'assert/logo/dinewhat.jpeg', alt: 'DineWhat restaurant discovery logo', kind: 'logo', title: 'DineWhat', detail: 'Restaurant discovery concept with recommendations based on dietary needs, atmosphere and budget. No public app link was provided.', links: [] },
+        { src: 'assert/logo/osama%20art%20studio.png', alt: 'Osama Arts Studio calligraphy logo', kind: 'logo', title: 'Osama Arts Studio', detail: 'Islamic calligraphy artwork and custom pieces, with short-form videos on the studio channel.', links: [{ label: 'YouTube channel', href: 'https://www.youtube.com/@Calligraphy_by_Osama' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] }
+      ] },
+    { key: 'social', plate: 'Social', door: 'violet', chip: 'Social posts & ad creatives',
+      title: 'Social media posts and ad creatives',
+      blurb: 'High-impact social media kits and marketing creatives that follow your brand strategy and are made to convert.',
+      points: ['Post and carousel design', 'Ad creatives for campaigns', 'Social media kits and templates', 'Pitch decks and business presentations'],
+      tools: ['Canva Pro'], cols: 3, colsSm: 2, ratio: '1 / 1', ratioLabel: '1:1', slots: 6, samples: [] },
+    { key: 'reels', plate: 'Reels', door: 'rose', chip: 'Reels, Shorts & TikTok edits',
+      title: 'Reels, Shorts and TikTok editing',
+      blurb: 'Vertical videos cut for short attention spans, with clean pacing and colour that fits each platform.',
+      points: ['Instagram Reels', 'YouTube Shorts', 'TikTok videos', 'Cutting, splicing and colour grading'],
+      tools: ['CapCut'], cols: 4, colsSm: 2, ratio: '9 / 16', ratioLabel: '9:16', slots: 4, samples: [] },
+    { key: 'motion', plate: 'Motion', door: 'amber', chip: 'Video & motion graphics',
+      title: 'Video editing and motion graphics',
+      blurb: 'A motion-graphics CV video, alongside promotional edits and whiteboard animation.',
+      points: ['Whiteboard animation', 'Promotional videos', 'Scripting and storyboard development', 'Motion graphics, cutting and colour grading'],
+      tools: ['CapCut'], cols: 1, colsSm: 1, ratio: '16 / 9', ratioLabel: '16:9', slots: 1, samples: [
+        { src: 'assert/Motion%20graphic/cv%20video.mp4', alt: 'Osama Saleem CV motion graphics video', title: 'CV motion graphic', video: true }
+      ] },
+    { key: 'calligraphy', plate: 'Calligraphy', door: 'green', chip: 'Calligraphy & custom artwork',
+      title: 'Islamic calligraphy and custom artwork',
+      blurb: 'Original Arabic and Quranic calligraphy, short-form process videos and custom canvas work from Osama Arts Studio.',
+      points: ['Handmade canvas calligraphy', 'Custom orders on request', 'Asma-ul-Husna series: one of Allah’s 99 names each day, with its meaning', 'Calligraphy videos on YouTube'],
+      tools: ['Alcohol inks', 'Acrylics'],
+      extra: '<figure class="seal"><p class="arabic" lang="ar" dir="rtl">الحمد لله</p><figcaption>Every Stroke Says Alhamdulillah</figcaption></figure><p class="handles">YouTube: <a href="https://www.youtube.com/@Calligraphy_by_Osama" target="_blank" rel="noopener">Osama Arts Studio</a> · 1.79K subscribers and 175 videos. Instagram: <a href="https://www.instagram.com/Calligraphy_by_Osama/" target="_blank" rel="noopener">@Calligraphy_by_Osama</a>.</p>',
+      cols: 2, colsSm: 2, ratio: '4 / 5', ratioLabel: '4:5', slots: 4, samples: [
+        { src: 'assert/logo/osama%20art%20studio.png', alt: 'Osama Arts Studio calligraphy logo', kind: 'logo', title: 'Osama Arts Studio', detail: 'Islamic calligraphy artwork and custom pieces, with short-form videos on the studio channel.', links: [{ label: 'YouTube channel', href: 'https://www.youtube.com/@Calligraphy_by_Osama' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] },
+        { src: 'https://i.ytimg.com/vi/IBAL6fgtIPw/hqdefault.jpg', alt: 'Quranic calligraphy of Surah Hud 11:90', href: 'https://www.youtube.com/shorts/IBAL6fgtIPw', label: 'Quranic Calligraphy · Surah Hud 11:90' },
+        { src: 'https://i.ytimg.com/vi/Tm9vLjn9pVw/hqdefault.jpg', alt: 'Arabic calligraphy of Al-Qahhar, Day 15 of 99', href: 'https://www.youtube.com/shorts/Tm9vLjn9pVw', label: 'Al-Qahhar · Day 15/99' },
+        { src: 'https://i.ytimg.com/vi/UWps7Le_XPA/hqdefault.jpg', alt: 'Arabic calligraphy about Tawakkul, putting trust in Allah', href: 'https://www.youtube.com/shorts/UWps7Le_XPA', label: 'Tawakkul · توكّل' }
+      ] }
+  ];
+
+  /* Theme: dark by default, pull cord switches. */
+  var cord = $('#cord');
+  function savedTheme() { try { return localStorage.getItem('os-theme'); } catch (e) { return null; } }
+  function saveTheme(v) { try { localStorage.setItem('os-theme', v); } catch (e) {} }
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    cord.setAttribute('aria-pressed', String(t === 'light'));
+    cord.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+  applyTheme(root.getAttribute('data-theme') || savedTheme() || 'dark');
+  cord.addEventListener('click', function () {
+    var next = (root.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+    cord.classList.add('pull');
+    setTimeout(function () { cord.classList.remove('pull'); }, 220);
+    applyTheme(next); saveTheme(next);
+  });
+
+  /* Karachi clock */
+  var clock = $('#clock');
+  function tick() {
+    try {
+      var d = new Date();
+      var t = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', hour: 'numeric', minute: '2-digit', hour12: true }).format(d);
+      var dt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', day: 'numeric', month: 'short', year: 'numeric' }).format(d);
+      clock.textContent = 'Karachi ' + t.toLowerCase() + ' · ' + dt;
+    } catch (e) {}
+  }
+  tick(); setInterval(tick, 30000);
+  try { $('#yr').textContent = new Date().getFullYear(); } catch (e) {}
+
+  /* Rotating role label */
+  var roles = ['Graphic Designer', 'Video Editor', 'Calligrapher'];
+  var tag = $('#role-tag'), live = $('#role-live');
+  roles.forEach(function (r) { var g = document.createElement('span'); g.className = 'ghost'; g.setAttribute('aria-hidden', 'true'); g.textContent = r; tag.insertBefore(g, live); });
+  live.setAttribute('aria-hidden', 'true');
+  if (!reduce) {
+    var ri = 0;
+    setInterval(function () {
+      live.classList.add('out');
+      setTimeout(function () { ri = (ri + 1) % roles.length; live.textContent = roles[ri]; live.classList.remove('out'); }, 260);
+    }, 2800);
+  }
+
+  /* Doors and panel */
+  var hall = $('#hall'), panel = $('#panel');
+  var plus = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+  function renderPanel(s) {
+    panel.style.setProperty('--door', 'var(--door-' + s.door + ')');
+    var cells = s.samples.map(function (x) {
+      var image = x.video
+        ? '<video controls playsinline preload="metadata" aria-label="' + esc(x.alt || x.title || 'Motion graphics video') + '"><source src="' + esc(x.src) + '" type="video/mp4">Your browser does not support HTML video.</video>'
+        : '<img src="' + esc(x.src) + '" alt="' + esc(x.alt || '') + '" loading="lazy">';
+      var caption = '';
+      if (x.kind === 'logo') {
+        var links = (x.links || []).map(function (link) {
+          return '<a href="' + esc(link.href) + '" target="_blank" rel="noopener noreferrer">' + esc(link.label) + '</a>';
+        }).join('');
+        caption = '<figcaption class="sample-caption"><strong class="sample-title">' + esc(x.title) + '</strong><span class="sample-description">' + esc(x.detail) + '</span>' + (links ? '<span class="sample-links">' + links + '</span>' : '') + '</figcaption>';
+      } else if (x.label) {
+        caption = '<span class="sample-caption">' + esc(x.label) + '</span>';
+      }
+      var content = image + caption;
+      if (x.href) content = '<a href="' + esc(x.href) + '" target="_blank" rel="noopener noreferrer" aria-label="Watch ' + esc(x.label || x.alt || 'video') + ' on YouTube">' + content + '</a>';
+      var focus = x.kind === 'logo' ? ' tabindex="0" role="group" aria-label="' + esc(x.title + ': ' + x.detail) + '"' : '';
+      return '<figure class="sample' + (x.kind === 'logo' ? ' logo' : '') + '" style="--ratio:' + s.ratio + '"' + focus + '>' + content + '</figure>';
+    });
+    for (var i = s.samples.length; i < s.slots; i++) {
+      cells.push('<div class="slot" style="--ratio:' + s.ratio + '">' + plus + '<span>Work sample</span><small>' + s.ratioLabel + '</small></div>');
+    }
+    panel.innerHTML =
+      '<div><p class="tag">' + esc(s.plate) + '</p><h3>' + esc(s.title) + '</h3><p class="blurb">' + esc(s.blurb) + '</p>' +
+      '<ul class="points">' + s.points.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
+      '<ul class="tools" aria-label="Tools">' + s.tools.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      (s.extra || '') +
+      '<a class="btn btn-ghost" href="#contact" data-ask="' + s.key + '">Ask about this</a></div>' +
+      '<div class="samples' + (s.key === 'branding' ? ' logo-gallery' : '') + '"' + (s.key === 'branding' ? ' role="region" aria-label="Brand projects. Scroll horizontally to explore on small screens" tabindex="0"' : '') + ' style="--cols:' + s.cols + ';--cols-sm:' + s.colsSm + '">' + cells.join('') + '</div>';
+  }
+  function select(key) {
+    var s = SERVICES.filter(function (x) { return x.key === key; })[0];
+    $$('.door', hall).forEach(function (d) { d.setAttribute('aria-pressed', String(d.dataset.key === key)); });
+    renderPanel(s);
+  }
+  SERVICES.forEach(function (s) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'door'; b.dataset.key = s.key;
+    b.style.setProperty('--door', 'var(--door-' + s.door + ')');
+    b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-controls', 'panel'); b.setAttribute('aria-label', s.title);
+    b.innerHTML = '<span class="door-frame"><span class="door-room"></span><span class="door-leaf"><span class="plate">' + esc(s.plate) + '</span><span class="knob"></span></span></span>';
+    b.addEventListener('click', function () { select(s.key); });
+    hall.appendChild(b);
+  });
+  select(SERVICES[0].key);
+
+  /* Story chapters */
+  var chapters = $$('.chapter'), label = $('#chapter-label');
+  function setChapter(el) {
+    chapters.forEach(function (c) { c.classList.toggle('on', c === el); });
+    if (label.textContent !== el.dataset.label) {
+      label.textContent = el.dataset.label;
+      if (!reduce) { label.classList.remove('swap'); void label.offsetWidth; label.classList.add('swap'); }
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setChapter(e.target); });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    chapters.forEach(function (c) { io.observe(c); });
+  }
+
+  /* Project brief */
+  var chipBox = $('#chips'), name = $('#b-name'), msg = $('#b-msg'), prev = $('#b-preview'), wa = $('#b-wa'), status = $('#b-status');
+  SERVICES.forEach(function (s) {
+    var l = document.createElement('label'); l.className = 'chip';
+    l.innerHTML = '<input type="checkbox" value="' + esc(s.chip) + '" data-key="' + s.key + '"><span>' + esc(s.chip) + '</span>';
+    chipBox.appendChild(l);
+  });
+  var boxes = $$('input', chipBox);
+  function compose() {
+    var picked = boxes.filter(function (c) { return c.checked; }).map(function (c) { return c.value; });
+    var who = name.value.trim(), m = msg.value.trim();
+    var out = ['Hi Osama, ' + (who ? 'I’m ' + who + '.' : 'I found your portfolio.')];
+    out.push(picked.length ? 'I need help with: ' + picked.join(', ') + '.' : 'I have a project to discuss.');
+    if (m) out.push(m);
+    return out.join('\n');
+  }
+  function refresh() {
+    var t = compose();
+    prev.textContent = t;
+    wa.href = 'https://wa.me/923212251851?text=' + encodeURIComponent(t);
+    status.textContent = '';
+  }
+  [name, msg].forEach(function (el) { el.addEventListener('input', refresh); });
+  boxes.forEach(function (c) { c.addEventListener('change', refresh); });
+  refresh();
+
+  function selectNode(node) {
+    try { var r = document.createRange(); r.selectNodeContents(node); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); } catch (e) {}
+  }
+  function copy(text, node, done, fail) {
+    var p;
+    try { p = navigator.clipboard.writeText(text); } catch (e) { p = Promise.reject(e); }
+    p.then(done, function () { selectNode(node); fail(); });
+  }
+  $('#b-copy').addEventListener('click', function () {
+    copy(compose(), prev, function () { status.textContent = 'Copied'; }, function () { status.textContent = 'Press copy on the selected text'; });
+  });
+  $$('.copy').forEach(function (btn) {
+    var node = btn.previousElementSibling, orig = btn.textContent;
+    btn.addEventListener('click', function () {
+      copy(btn.dataset.copy, node, function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = orig; }, 1600); }, function () { btn.textContent = 'Selected'; setTimeout(function () { btn.textContent = orig; }, 1600); });
+    });
+  });
+  panel.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-ask]');
+    if (!a) return;
+    boxes.forEach(function (c) { if (c.dataset.key === a.dataset.ask) c.checked = true; });
+    refresh();
+  });
+})();
+</script>
+
+</body></html>
