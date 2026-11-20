@@ -285,6 +285,10 @@
   .copy:hover { border-color: var(--muted); }
   .foot { border-top: 1px solid var(--line); padding-block: 28px; font-size: 13px; color: var(--muted); }
   .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+  .foot-social { display: flex; align-items: center; gap: 10px; }
+  .foot-social a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); transition: color .2s, border-color .2s, background-color .2s, transform .2s; }
+  .foot-social a:hover { color: var(--fg); border-color: var(--accent-text); background: color-mix(in srgb, var(--accent-text) 10%, transparent); transform: translateY(-2px); }
+  .foot-social svg { display: block; width: 18px; height: 18px; fill: currentColor; }
 
   @media (max-width: 900px) {
     .clock { display: none; }
@@ -486,6 +490,14 @@
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Osama Saleem</span>
     <span>Graphic Designer · Digital Marketer · Video Editor · Calligrapher, Karachi</span>
+    <nav class="foot-social" aria-label="Social media">
+      <a href="https://www.youtube.com/@Calligraphy_by_Osama" target="_blank" rel="noopener noreferrer" aria-label="Osama Arts Studio on YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/Calligraphy_by_Osama/" target="_blank" rel="noopener noreferrer" aria-label="Calligraphy by Osama on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.2-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+      </a>
+    </nav>
   </div>
 </footer>
 
