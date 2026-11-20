@@ -204,6 +204,16 @@
   .sample > a { display: block; width: 100%; height: 100%; position: relative; text-decoration: none; }
   .sample img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
   .sample video { width: 100%; height: 100%; object-fit: contain; display: block; background: #080b10; }
+  .video-sound-btn {
+    position: absolute; top: 14px; right: 14px; z-index: 10;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 999px;
+    background: rgba(13, 17, 23, 0.88); border: 1px solid var(--brass-2);
+    color: var(--brass-1); font-size: 13px; font-weight: 600; cursor: pointer;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5); transition: transform .2s, background-color .2s;
+  }
+  .video-sound-btn:hover { transform: scale(1.05); background: rgba(22, 28, 38, 0.98); color: #fff; }
   .sample.logo { display: grid; place-items: center; background: #fff; }
   .sample.logo img { object-fit: contain; padding: 12px; background: transparent; }
   .sample-caption { position: absolute; z-index: 1; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 16px; overflow-y: auto; background: linear-gradient(180deg, rgba(9,13,20,.08) 8%, rgba(9,13,20,.9) 50%, rgba(9,13,20,.97)); color: #fff; font-size: 12px; line-height: 1.4; opacity: 0; transform: translateY(8px); transition: opacity .22s ease, transform .22s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
@@ -392,7 +402,12 @@
           <article class="chapter" data-label="Studio">
             <p class="ch-tag" aria-hidden="true">Studio</p>
             <h3>Osama Arts Studio</h3>
-            <p>My Islamic calligraphy business. Handmade canvas artwork, custom orders and calligraphy videos on YouTube, where the channel passed 1,000 subscribers.</p>
+            <p>My Islamic calligraphy brand and creative studio. Handmade custom canvases, personalized wedding & Nikah frames, and process reels shared across Facebook, Instagram, and YouTube under the studio banner "Every Stroke Says Alhamdulillah".</p>
+            <ul>
+              <li>Handcrafted Arabic calligraphy and Quranic verse canvases</li>
+              <li>Custom commissions: wedding & Nikahnama name art, luxury bookmarks</li>
+              <li>Reels and process videos across Facebook, Instagram (@Calligraphy_by_Osama), and YouTube (1.7K+ community)</li>
+            </ul>
           </article>
           <article class="chapter" data-label="2021–2026">
             <p class="ch-tag" aria-hidden="true">2021–26</p>
@@ -474,6 +489,7 @@
         <dl class="reach">
           <div><dt>Email</dt><dd id="r-mail">osamasaleem0001@gmail.com</dd><button class="copy" type="button" data-copy="osamasaleem0001@gmail.com">Copy</button></div>
           <div><dt>WhatsApp and phone</dt><dd id="r-phone">0321 2251851</dd><button class="copy" type="button" data-copy="03212251851">Copy</button></div>
+          <div><dt>Calligraphy on Facebook</dt><dd><a href="https://www.facebook.com/profile.php?id=100075579560257" target="_blank" rel="noopener">Osama Arts Studio (Facebook Page)</a></dd></div>
           <div><dt>Calligraphy on Instagram</dt><dd><a href="https://www.instagram.com/Calligraphy_by_Osama/" target="_blank" rel="noopener">@Calligraphy_by_Osama</a></dd></div>
           <div><dt>Based in</dt><dd>Karachi, Pakistan</dd></div>
         </dl>
@@ -522,26 +538,40 @@
         { src: 'assert/logo/osama%20art%20studio.png', alt: 'Osama Arts Studio calligraphy logo', kind: 'logo', title: 'Osama Arts Studio', detail: 'Islamic calligraphy artwork and custom pieces, with short-form videos on the studio channel.', links: [{ label: 'YouTube channel', href: 'https://www.youtube.com/@Calligraphy_by_Osama' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] }
       ] },
     { key: 'social', plate: 'Social', door: 'violet', chip: 'Social posts & ad creatives',
-      title: 'Social media posts and ad creatives',
-      blurb: 'High-impact social media kits and marketing creatives that follow your brand strategy and are made to convert.',
-      points: ['Post and carousel design', 'Ad creatives for campaigns', 'Social media kits and templates', 'Pitch decks and business presentations'],
-      tools: ['Canva Pro'], cols: 3, colsSm: 2, ratio: '1 / 1', ratioLabel: '1:1', slots: 6, samples: [] },
+      title: 'Social media posts, carousels & ad creatives',
+      blurb: 'High-impact social media kits, promotional posts, and marketing creatives designed for Facebook and Instagram to boost brand authority and conversion.',
+      points: ['Facebook & Instagram post and carousel design', 'High-converting ad campaign creatives', 'Brand social media templates in Canva Pro', 'Custom studio artwork announcements & promotional graphics'],
+      tools: ['Canva Pro', 'Photoshop'], cols: 3, colsSm: 2, ratio: '1 / 1', ratioLabel: '1:1', slots: 6, samples: [
+        { src: 'assert/logo/smartax%20global.png', alt: 'SMARTax Global social media campaign graphic', title: 'Fintech Campaign Post', detail: 'Clean typography and structured layout for fintech services social promotions.', links: [{ label: 'Live Project', href: 'https://frontend-xi-six-7ro19fc0f4.vercel.app/' }] },
+        { src: 'assert/logo/dressia.jpeg', alt: 'Dressia social media lifestyle campaign', title: 'Fashion App Social Kit', detail: 'Minimalist brand aesthetic for fashion curation and mobile app social marketing.', links: [{ label: 'App Store', href: 'https://apps.apple.com/in/app/dressia-closet-redefined/id6769307805' }] },
+        { src: 'assert/logo/osama%20art%20studio.png', alt: 'Osama Arts Studio Facebook post design', title: 'Studio Showcase Post', detail: 'Curated social media creative celebrating Islamic calligraphy and custom commissions.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] },
+        { src: 'assert/logo/zenpense.jpeg', alt: 'Zenpense social ad creative', title: 'Product Launch Ad', detail: 'High-converting digital ad creative highlighting personal finance mobile management.', links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nextgenesol.flexigridassistant' }] },
+        { src: 'assert/logo/dinease.jpeg', alt: 'Dinease restaurant digital social ad', title: 'Restaurant Tech Creative', detail: 'Promotional visual asset for modern QR dining and contactless table ordering.', links: [{ label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nextgenesol.dinease&pcampaignid=web_share' }] },
+        { src: 'assert/logo/vectorcollab.png', alt: 'Vector Collab social media banner', title: 'AI Workspace Promo', detail: 'SaaS promotional creative highlighting multi-agent team workflows and collaboration.', links: [{ label: 'Demo', href: 'https://test-rag-tawny.vercel.app/' }] }
+      ] },
     { key: 'reels', plate: 'Reels', door: 'rose', chip: 'Reels, Shorts & TikTok edits',
-      title: 'Reels, Shorts and TikTok editing',
-      blurb: 'Vertical videos cut for short attention spans, with clean pacing and colour that fits each platform.',
-      points: ['Instagram Reels', 'YouTube Shorts', 'TikTok videos', 'Cutting, splicing and colour grading'],
-      tools: ['CapCut'], cols: 4, colsSm: 2, ratio: '9 / 16', ratioLabel: '9:16', slots: 4, samples: [] },
+      title: 'Reels, Shorts and short-form video editing',
+      blurb: 'High-retention vertical videos, calligraphy time-lapses, and promotional reels edited for Instagram, Facebook, and YouTube Shorts with dynamic pacing and color grading.',
+      points: ['Instagram & Facebook Reels optimization', 'YouTube Shorts pacing and sound sync', 'Satisfying calligraphy and art process time-lapses', 'CapCut visual transitions and text animations'],
+      tools: ['CapCut', 'Canva Pro'], cols: 4, colsSm: 2, ratio: '9 / 16', ratioLabel: '9:16', slots: 4, samples: [
+        { src: 'https://i.ytimg.com/vi/IBAL6fgtIPw/hqdefault.jpg', alt: 'Surah Hud 11:90 Calligraphy Reel', title: 'Surah Hud (11:90) Reel', detail: 'Quranic calligraphy time-lapse on serene mountain landscape canvas.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Watch Video', href: 'https://www.youtube.com/shorts/IBAL6fgtIPw' }] },
+        { src: 'https://i.ytimg.com/vi/Tm9vLjn9pVw/hqdefault.jpg', alt: 'Al-Qahhar 99 Names of Allah Reel', title: 'Al-Qahhar (Day 15/99)', detail: 'Asma-ul-Husna daily series: fine-tip gold lettering and ink flow.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Watch Video', href: 'https://www.youtube.com/shorts/Tm9vLjn9pVw' }] },
+        { src: 'https://i.ytimg.com/vi/UWps7Le_XPA/hqdefault.jpg', alt: 'Tawakkul Islamic Art Process Reel', title: 'Tawakkul (توكّل) Process', detail: 'Spiritual devotional art reel with rhythm-matched strokes and textured accents.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Watch Video', href: 'https://www.youtube.com/shorts/UWps7Le_XPA' }] },
+        { src: 'https://i.ytimg.com/vi/IBAL6fgtIPw/mqdefault.jpg', alt: 'Kun Fayakun Canvas Reveal Reel', title: 'Kun Fayakun Canvas Reveal', detail: 'Dramatic reveal reel of gold-on-black textured canvas with Quranic calligraphy.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] }
+      ] },
     { key: 'calligraphy', plate: 'Calligraphy', door: 'green', chip: 'Calligraphy & custom artwork',
-      title: 'Islamic calligraphy and custom artwork',
-      blurb: 'Original Arabic and Quranic calligraphy, short-form process videos and custom canvas work from Osama Arts Studio.',
-      points: ['Handmade canvas calligraphy', 'Custom orders on request', 'Asma-ul-Husna series: one of Allah’s 99 names each day, with its meaning', 'Calligraphy videos on YouTube'],
-      tools: ['Alcohol inks', 'Acrylics'],
-      extra: '<figure class="seal"><p class="arabic" lang="ar" dir="rtl">الحمد لله</p><figcaption>Every Stroke Says Alhamdulillah</figcaption></figure><p class="handles">YouTube: <a href="https://www.youtube.com/@Calligraphy_by_Osama" target="_blank" rel="noopener">Osama Arts Studio</a> · 1.79K subscribers and 175 videos. Instagram: <a href="https://www.instagram.com/Calligraphy_by_Osama/" target="_blank" rel="noopener">@Calligraphy_by_Osama</a>.</p>',
-      cols: 2, colsSm: 2, ratio: '4 / 5', ratioLabel: '4:5', slots: 4, samples: [
-        { src: 'assert/logo/osama%20art%20studio.png', alt: 'Osama Arts Studio calligraphy logo', kind: 'logo', title: 'Osama Arts Studio', detail: 'Islamic calligraphy artwork and custom pieces, with short-form videos on the studio channel.', links: [{ label: 'YouTube channel', href: 'https://www.youtube.com/@Calligraphy_by_Osama' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] },
-        { src: 'https://i.ytimg.com/vi/IBAL6fgtIPw/hqdefault.jpg', alt: 'Quranic calligraphy of Surah Hud 11:90', href: 'https://www.youtube.com/shorts/IBAL6fgtIPw', label: 'Quranic Calligraphy · Surah Hud 11:90' },
-        { src: 'https://i.ytimg.com/vi/Tm9vLjn9pVw/hqdefault.jpg', alt: 'Arabic calligraphy of Al-Qahhar, Day 15 of 99', href: 'https://www.youtube.com/shorts/Tm9vLjn9pVw', label: 'Al-Qahhar · Day 15/99' },
-        { src: 'https://i.ytimg.com/vi/UWps7Le_XPA/hqdefault.jpg', alt: 'Arabic calligraphy about Tawakkul, putting trust in Allah', href: 'https://www.youtube.com/shorts/UWps7Le_XPA', label: 'Tawakkul · توكّل' }
+      title: 'Islamic calligraphy, custom canvases & art reels',
+      blurb: 'Original Arabic and Quranic calligraphy, handmade canvas commissions, and viral process reels from Osama Arts Studio on Facebook, Instagram, and YouTube.',
+      points: ['Handmade canvas calligraphy & custom orders on request', 'Personalized Wedding & Nikahnama name art, luxury bookmarks & gifts', 'Asma-ul-Husna series: one of Allah’s 99 names each day with meaning', 'Process time-lapses, ink pouring, and gold-leaf textured artwork'],
+      tools: ['Alcohol inks', 'Acrylics', 'Gold leaf', 'Bamboo qalam'],
+      extra: '<figure class="seal"><p class="arabic" lang="ar" dir="rtl">الحمد لله</p><figcaption>Every Stroke Says Alhamdulillah</figcaption></figure><p class="handles">Facebook: <a href="https://www.facebook.com/profile.php?id=100075579560257" target="_blank" rel="noopener">Osama Arts Studio</a> · Instagram: <a href="https://www.instagram.com/Calligraphy_by_Osama/" target="_blank" rel="noopener">@Calligraphy_by_Osama</a> · YouTube: <a href="https://www.youtube.com/@Calligraphy_by_Osama" target="_blank" rel="noopener">Osama Arts Studio (1.79K+)</a>.</p>',
+      cols: 3, colsSm: 2, ratio: '4 / 5', ratioLabel: '4:5', slots: 6, samples: [
+        { src: 'assert/logo/osama%20art%20studio.png', alt: 'Osama Arts Studio brand emblem', kind: 'logo', title: 'Osama Arts Studio', detail: 'Signature art studio brand: handmade Islamic calligraphy, custom canvas art, and viral reels.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }, { label: 'YouTube', href: 'https://www.youtube.com/@Calligraphy_by_Osama' }] },
+        { src: 'https://i.ytimg.com/vi/IBAL6fgtIPw/hqdefault.jpg', alt: 'Quranic calligraphy of Surah Hud 11:90', title: 'Surah Hud (11:90)', detail: 'إِنَّ رَبِّي رَحِيمٌ وَدُودٌ — Indeed, my Lord is Most Merciful, Most Loving. Acrylic & ink on mountain landscape canvas.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Watch Video', href: 'https://www.youtube.com/shorts/IBAL6fgtIPw' }] },
+        { src: 'https://i.ytimg.com/vi/Tm9vLjn9pVw/hqdefault.jpg', alt: 'Arabic calligraphy of Al-Qahhar, Day 15 of 99', title: 'Al-Qahhar (الْقَهَّارُ)', detail: 'Day 15/99 of the Asma-ul-Husna daily series: The All-Compelling Subduer, rendered in bold traditional Arabic script.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Watch Video', href: 'https://www.youtube.com/shorts/Tm9vLjn9pVw' }] },
+        { src: 'https://i.ytimg.com/vi/UWps7Le_XPA/hqdefault.jpg', alt: 'Arabic calligraphy about Tawakkul, putting trust in Allah', title: 'Tawakkul (توكّل)', detail: 'Putting complete trust in Allah — handmade devotional canvas featuring blended earth tones and fluid script.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Watch Video', href: 'https://www.youtube.com/shorts/UWps7Le_XPA' }] },
+        { src: 'https://i.ytimg.com/vi/IBAL6fgtIPw/mqdefault.jpg', alt: 'Kun Fayakun Quranic Calligraphy Canvas', title: 'Kun Fayakun (كُن فَيَكُونُ)', detail: 'Be, and it is — Surah Ya-Sin divine proclamation rendered in textured gold leaf against deep obsidian acrylic.', links: [{ label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }, { label: 'Instagram', href: 'https://www.instagram.com/Calligraphy_by_Osama/' }] },
+        { src: 'assert/logo/osama%20art%20studio.png', alt: 'Personalized Nikahnama & Wedding Canvases', kind: 'logo', title: 'Wedding & Nikah Canvases', detail: 'Custom couple names, wedding dates, and blessing verses tailored for Nikah gifts, luxury frames, and home decor.', links: [{ label: 'Order on WhatsApp', href: 'https://wa.me/923212251851' }, { label: 'Facebook Page', href: 'https://www.facebook.com/profile.php?id=100075579560257' }] }
       ] }
   ];
 
@@ -595,15 +625,15 @@
     panel.style.setProperty('--door', 'var(--door-' + s.door + ')');
     var cells = s.samples.map(function (x) {
       var image = x.video
-        ? '<video class="panel-video" muted playsinline preload="metadata" aria-label="' + esc(x.alt || x.title || 'Motion graphics video') + '"><source src="' + esc(x.src) + '" type="video/mp4">Your browser does not support HTML video.</video>'
+        ? '<video class="panel-video" controls muted playsinline preload="metadata" aria-label="' + esc(x.alt || x.title || 'Motion graphics video') + '"><source src="' + esc(x.src) + '" type="video/mp4">Your browser does not support HTML video.</video><button type="button" class="video-sound-btn" aria-label="Toggle sound">🔇 Tap for Sound</button>'
         : '<img src="' + esc(x.src) + '" alt="' + esc(x.alt || '') + '" loading="lazy">';
       var caption = '';
-      if (x.kind === 'logo') {
+      if (!x.video && (x.kind === 'logo' || x.title)) {
         var links = (x.links || []).map(function (link) {
           return '<a href="' + esc(link.href) + '" target="_blank" rel="noopener noreferrer">' + esc(link.label) + '</a>';
         }).join('');
-        caption = '<figcaption class="sample-caption"><strong class="sample-title">' + esc(x.title) + '</strong><span class="sample-description">' + esc(x.detail) + '</span>' + (links ? '<span class="sample-links">' + links + '</span>' : '') + '</figcaption>';
-      } else if (x.label) {
+        caption = '<figcaption class="sample-caption"><strong class="sample-title">' + esc(x.title) + '</strong>' + (x.detail ? '<span class="sample-description">' + esc(x.detail) + '</span>' : '') + (links ? '<span class="sample-links">' + links + '</span>' : '') + '</figcaption>';
+      } else if (!x.video && x.label) {
         caption = '<span class="sample-caption">' + esc(x.label) + '</span>';
       }
       var content = image + caption;
@@ -638,18 +668,45 @@
   });
   select(SERVICES[0].key);
 
-  /* Auto-play/pause video when panel scrolls into view */
+  /* Auto-play/pause video when panel scrolls into view & handle audio/controls */
   function hookVideoAutoplay() {
     var vid = panel.querySelector('video.panel-video');
     if (!vid) return;
+    var soundBtn = panel.querySelector('.video-sound-btn');
+    if (soundBtn) {
+      soundBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        vid.muted = !vid.muted;
+        soundBtn.innerHTML = vid.muted ? '🔇 Tap for Sound' : '🔊 Sound On';
+      });
+      vid.addEventListener('volumechange', function () {
+        if (soundBtn) soundBtn.innerHTML = vid.muted ? '🔇 Tap for Sound' : '🔊 Sound On';
+      });
+    }
     if (window._videoObs) window._videoObs.disconnect();
     window._videoObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { try { vid.play(); } catch(err){} }
-        else { vid.pause(); }
+        if (e.isIntersecting) {
+          // Only autoplay if video is currently paused and wasn't manually stopped by user
+          if (vid.paused && !vid.dataset.userStopped) {
+            try { vid.play(); } catch (err) {}
+          }
+        } else {
+          vid.pause();
+        }
       });
     }, { threshold: 0.35 });
     window._videoObs.observe(panel);
+    vid.addEventListener('pause', function () {
+      // Mark as user stopped if in view so scroll won't aggressively force-play
+      var rect = panel.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        vid.dataset.userStopped = 'true';
+      }
+    });
+    vid.addEventListener('play', function () {
+      delete vid.dataset.userStopped;
+    });
   }
   hookVideoAutoplay();
   /* Re-hook whenever the panel is re-rendered (door switch) */
