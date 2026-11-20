@@ -270,9 +270,10 @@
   .chip input:focus-visible + span { outline: 2px solid var(--accent-text); outline-offset: 2px; }
   .field { width: 100%; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font: 400 16px/1.5 var(--f-body); resize: vertical; }
   .field::placeholder { color: var(--muted); opacity: .8; }
-  .preview { padding: 14px 16px; border-radius: 12px; background: var(--bg-sunk); border: 1px dashed var(--line); }
+  .preview { padding: 14px 16px; border-radius: 12px; background: var(--bg-sunk); border: 1px dashed var(--line); display: none; }
+  .preview.has-content { display: block; }
   .preview .l { margin-bottom: 6px; }
-  .preview p { white-space: pre-wrap; font-size: 14px; overflow-wrap: anywhere; }
+  .preview p { white-space: pre-wrap; font-size: 14px; overflow-wrap: anywhere; line-height: 1.65; color: var(--fg); }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .hint { font-size: 13px; color: var(--muted); }
   .reach { display: grid; gap: 4px; }
@@ -331,8 +332,8 @@
         <p class="status"><span class="dot" aria-hidden="true"></span>Open to new projects</p>
         <h1 id="hi">Hi, I'm Osama.</h1>
         <p class="iam"><span>I am a</span><span class="role-tag" id="role-tag"><span class="live" id="role-live">Graphic Designer</span></span></p>
-        <p class="sr">Graphic designer, video editor and calligrapher based in Karachi.</p>
-        <p class="lede">I design brands, social content and videos that help businesses stand out. Five years of freelance work for Upwork and direct clients around the world.</p>
+        <p class="sr">Graphic designer, video editor, calligrapher, digital marketer and content creator based in Karachi.</p>
+        <p class="lede">I design brands, create social content, edit videos and run digital marketing campaigns that help businesses stand out — with five years of freelance work for Upwork and direct clients, plus hands-on experience as an Operations & Account Manager at Malik Associates.</p>
         <div class="cta">
           <a class="btn btn-brass" href="#contact">Start a project</a>
           <a class="btn btn-ghost" href="#work">See the work</a>
@@ -340,6 +341,7 @@
         <dl class="facts">
           <div><dt>Experience</dt><dd>5+ years</dd></div>
           <div><dt>Clients</dt><dd>Upwork and direct</dd></div>
+          <div><dt>Also worked as</dt><dd>Operations & Account Manager</dd></div>
           <div><dt>Based in</dt><dd>Karachi, Pakistan</dd></div>
         </dl>
       </div>
@@ -392,10 +394,21 @@
             <h3>Osama Arts Studio</h3>
             <p>My Islamic calligraphy business. Handmade canvas artwork, custom orders and calligraphy videos on YouTube, where the channel passed 1,000 subscribers.</p>
           </article>
-          <article class="chapter" data-label="Today">
+          <article class="chapter" data-label="2021–2026">
+            <p class="ch-tag" aria-hidden="true">2021–26</p>
+            <h3>Operations &amp; Account Manager — Malik Associates</h3>
+            <p>Joined Malik Associates in January 2021 as Operations and Account Manager, a role held for five full years until the firm's closure in February 2026. Responsible for day-to-day operations, financial records, client coordination and management reporting.</p>
+            <ul>
+              <li>Maintained accounts and financial records</li>
+              <li>Prepared management reports and documentation</li>
+              <li>Coordinated with clients and staff</li>
+              <li>Supported senior management in planning and decision-making</li>
+            </ul>
+          </article>
+          <article class="chapter on" data-label="Today">
             <p class="ch-tag" aria-hidden="true">Today</p>
-            <h3>Five years in, still building</h3>
-            <p>Brand identity, social media design and whiteboard animation for international clients, alongside new calligraphy series for the studio.</p>
+            <h3>Creative professional &amp; freelancer — open to work</h3>
+            <p>Now full-time freelance — combining graphic design, digital marketing, content creation, video editing and calligraphy for clients worldwide, while continuing the Osama Arts Studio series and open to new opportunities in both creative and operations roles.</p>
           </article>
         </div>
       </div>
@@ -472,7 +485,7 @@
 <footer class="foot">
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Osama Saleem</span>
-    <span>Graphic Designer &amp; Video Editor, Karachi</span>
+    <span>Graphic Designer · Digital Marketer · Video Editor · Calligrapher, Karachi</span>
   </div>
 </footer>
 
@@ -486,6 +499,13 @@
 
   /* Work data. Add real samples as { src: 'path.jpg', alt: 'description' } inside a service's samples list. */
   var SERVICES = [
+    { key: 'motion', plate: 'Motion', door: 'amber', chip: 'Video & motion graphics',
+      title: 'Video editing and motion graphics',
+      blurb: 'A motion-graphics CV video, alongside promotional edits and whiteboard animation.',
+      points: ['Whiteboard animation', 'Promotional videos', 'Scripting and storyboard development', 'Motion graphics, cutting and colour grading'],
+      tools: ['CapCut'], cols: 1, colsSm: 1, ratio: '16 / 9', ratioLabel: '16:9', slots: 1, samples: [
+        { src: 'assert/Motion%20graphic/cv%20video.mp4', alt: 'Osama Saleem CV motion graphics video', title: 'CV motion graphic', video: true }
+      ] },
     { key: 'branding', plate: 'Branding', door: 'blue', chip: 'Brand identity & logo',
       title: 'Brand identity and logo design',
       blurb: 'A selection of product and business marks, from finance and restaurant apps to collaboration and family-safety products.',
@@ -511,13 +531,6 @@
       blurb: 'Vertical videos cut for short attention spans, with clean pacing and colour that fits each platform.',
       points: ['Instagram Reels', 'YouTube Shorts', 'TikTok videos', 'Cutting, splicing and colour grading'],
       tools: ['CapCut'], cols: 4, colsSm: 2, ratio: '9 / 16', ratioLabel: '9:16', slots: 4, samples: [] },
-    { key: 'motion', plate: 'Motion', door: 'amber', chip: 'Video & motion graphics',
-      title: 'Video editing and motion graphics',
-      blurb: 'A motion-graphics CV video, alongside promotional edits and whiteboard animation.',
-      points: ['Whiteboard animation', 'Promotional videos', 'Scripting and storyboard development', 'Motion graphics, cutting and colour grading'],
-      tools: ['CapCut'], cols: 1, colsSm: 1, ratio: '16 / 9', ratioLabel: '16:9', slots: 1, samples: [
-        { src: 'assert/Motion%20graphic/cv%20video.mp4', alt: 'Osama Saleem CV motion graphics video', title: 'CV motion graphic', video: true }
-      ] },
     { key: 'calligraphy', plate: 'Calligraphy', door: 'green', chip: 'Calligraphy & custom artwork',
       title: 'Islamic calligraphy and custom artwork',
       blurb: 'Original Arabic and Quranic calligraphy, short-form process videos and custom canvas work from Osama Arts Studio.',
@@ -563,7 +576,7 @@
   try { $('#yr').textContent = new Date().getFullYear(); } catch (e) {}
 
   /* Rotating role label */
-  var roles = ['Graphic Designer', 'Video Editor', 'Calligrapher'];
+  var roles = ['Graphic Designer', 'Digital Marketer', 'Content Creator', 'Video Editor', 'Calligrapher', 'Operations Manager'];
   var tag = $('#role-tag'), live = $('#role-live');
   roles.forEach(function (r) { var g = document.createElement('span'); g.className = 'ghost'; g.setAttribute('aria-hidden', 'true'); g.textContent = r; tag.insertBefore(g, live); });
   live.setAttribute('aria-hidden', 'true');
@@ -582,7 +595,7 @@
     panel.style.setProperty('--door', 'var(--door-' + s.door + ')');
     var cells = s.samples.map(function (x) {
       var image = x.video
-        ? '<video controls playsinline preload="metadata" aria-label="' + esc(x.alt || x.title || 'Motion graphics video') + '"><source src="' + esc(x.src) + '" type="video/mp4">Your browser does not support HTML video.</video>'
+        ? '<video class="panel-video" muted playsinline preload="metadata" aria-label="' + esc(x.alt || x.title || 'Motion graphics video') + '"><source src="' + esc(x.src) + '" type="video/mp4">Your browser does not support HTML video.</video>'
         : '<img src="' + esc(x.src) + '" alt="' + esc(x.alt || '') + '" loading="lazy">';
       var caption = '';
       if (x.kind === 'logo') {
@@ -625,6 +638,24 @@
   });
   select(SERVICES[0].key);
 
+  /* Auto-play/pause video when panel scrolls into view */
+  function hookVideoAutoplay() {
+    var vid = panel.querySelector('video.panel-video');
+    if (!vid) return;
+    if (window._videoObs) window._videoObs.disconnect();
+    window._videoObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { try { vid.play(); } catch(err){} }
+        else { vid.pause(); }
+      });
+    }, { threshold: 0.35 });
+    window._videoObs.observe(panel);
+  }
+  hookVideoAutoplay();
+  /* Re-hook whenever the panel is re-rendered (door switch) */
+  var _origRenderPanel = renderPanel;
+  renderPanel = function(s) { _origRenderPanel(s); hookVideoAutoplay(); };
+
   /* Story chapters */
   var chapters = $$('.chapter'), label = $('#chapter-label');
   function setChapter(el) {
@@ -649,6 +680,7 @@
     chipBox.appendChild(l);
   });
   var boxes = $$('input', chipBox);
+  var previewBox = prev.closest('.preview');
   function compose() {
     var picked = boxes.filter(function (c) { return c.checked; }).map(function (c) { return c.value; });
     var who = name.value.trim(), m = msg.value.trim();
@@ -658,10 +690,14 @@
     return out.join('\n');
   }
   function refresh() {
+    var picked = boxes.filter(function (c) { return c.checked; });
+    var who = name.value.trim(), m = msg.value.trim();
+    var hasInput = picked.length > 0 || who.length > 0 || m.length > 0;
     var t = compose();
     prev.textContent = t;
     wa.href = 'https://wa.me/923212251851?text=' + encodeURIComponent(t);
     status.textContent = '';
+    previewBox.classList.toggle('has-content', hasInput);
   }
   [name, msg].forEach(function (el) { el.addEventListener('input', refresh); });
   boxes.forEach(function (c) { c.addEventListener('change', refresh); });

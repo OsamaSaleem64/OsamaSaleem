@@ -1,0 +1,7 @@
+## when you done the work
+git add .
+git commit -m "your commit"
+git push origin main
+
+## when you start the work
+git pull origin main
